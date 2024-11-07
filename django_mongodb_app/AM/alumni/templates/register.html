@@ -1,0 +1,33 @@
+<!-- alumni/templates/register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+
+    <title>Register - Alumni Platform</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about/">About Us</a>
+        <a href="/register/">Register</a>
+    </nav>
+    <h1>Register</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="graduation_year">Graduation Year:</label>
+        <input type="number" id="graduation_year" name="graduation_year" required>
+        
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
